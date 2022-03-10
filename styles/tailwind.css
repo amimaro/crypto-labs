@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .link {
+    @apply text-blue-600 border-b-blue-600 hover:border-b-[1px];
+  }
+  .spacer {
+    @apply flex-grow;
+  }
+  .nav-link {
+    @apply text-lg border-b-2 border-transparent hover:border-blue-300;
+  }
+}
+
+@layer utilities {
+  .nav-link.active {
+    @apply border-blue-500;
+  }
+}

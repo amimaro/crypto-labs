@@ -1,3 +1,9 @@
-export default function Index() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+import { LoaderFunction, redirect } from "remix";
+
+export const loader: LoaderFunction = async () => {
+  return redirect("decimals");
+};
+
+export default function HomePage() {
+  return <div>Redirect to decimals...</div>;
 }

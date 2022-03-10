@@ -7,14 +7,19 @@ import {
   ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
-import styles from "./styles/tailwind.css";
+import tailwindStyles from "./styles/tailwind.css";
+import globalStyles from "./styles/global.css";
+import AppLayout from "./components/AppLayout";
 
 export const meta: MetaFunction = () => {
   return { title: "New Remix App" };
 };
 
 export function links() {
-  return [{ rel: "stylesheet", href: styles }];
+  return [
+    { rel: "stylesheet", href: tailwindStyles },
+    { rel: "stylesheet", href: globalStyles },
+  ];
 }
 
 export default function App() {
@@ -27,7 +32,9 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <AppLayout>
+          <Outlet />
+        </AppLayout>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
