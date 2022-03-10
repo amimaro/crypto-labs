@@ -26,7 +26,7 @@ export default function AppHeader() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <svg viewBox="0 0 128 128" className="w-10 h-10 text-slate-600">
+          <svg viewBox="0 0 128 128" className="w-8 h-8 text-slate-600">
             <g fill="currentColor">
               <path
                 fillRule="evenodd"
