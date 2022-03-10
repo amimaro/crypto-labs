@@ -12,7 +12,7 @@ import globalStyles from "./styles/global.css";
 import AppLayout from "./components/AppLayout";
 
 export const meta: MetaFunction = () => {
-  return { title: "New Remix App" };
+  return { title: "Crypto Labs" };
 };
 
 export function links() {
