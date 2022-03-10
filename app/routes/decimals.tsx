@@ -9,6 +9,7 @@ import {
   useTransition,
 } from "remix";
 import AppCard from "~/components/AppCard";
+import AppClipboardButton from "~/components/AppClipboardButton";
 import AppInput from "~/components/AppInput";
 import useDebounce from "~/hooks/useDebounce";
 
@@ -72,7 +73,7 @@ export default function DecimalsPage() {
 
     if (unit === "wei") {
       setWei(value);
-      setGwei(utils.formatUnits(value, "gwei"));
+      setGwei(utils.formatUnits(value, 8));
       setEther(utils.formatUnits(value, "ether"));
     }
 
@@ -104,6 +105,7 @@ export default function DecimalsPage() {
                 onChange={(e) => handleInputChange("wei", e)}
                 placeholder="Wei value"
               />
+              <AppClipboardButton copy={wei} />
             </div>
             <div className="flex items-center gap-4">
               <div className="w-20 font-semibold">Gwei</div>
@@ -113,6 +115,7 @@ export default function DecimalsPage() {
                 onChange={(e) => handleInputChange("gwei", e)}
                 placeholder="Gwei value"
               />
+              <AppClipboardButton copy={gwei} />
             </div>
             <div className="flex items-center gap-4">
               <div className="w-20 font-semibold">Ether</div>
@@ -122,6 +125,7 @@ export default function DecimalsPage() {
                 onChange={(e) => handleInputChange("ether", e)}
                 placeholder="Ether value"
               />
+              <AppClipboardButton copy={ether} />
             </div>
             {actionData &&
               actionData.usd.length > 0 &&
@@ -136,6 +140,7 @@ export default function DecimalsPage() {
                       placeholder="USD value"
                       readOnly
                     />
+                    <AppClipboardButton copy={actionData?.usd} />
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="w-20 font-semibold">BRL</div>
@@ -145,6 +150,7 @@ export default function DecimalsPage() {
                       placeholder="USD value"
                       readOnly
                     />
+                     <AppClipboardButton copy={actionData?.brl} />
                   </div>
                 </>
               )}
